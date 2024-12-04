@@ -23,7 +23,6 @@ section_url = 'https://raw.githubusercontent.com/ryadav2R/time-table/main/SECTIO
 core_url = 'https://raw.githubusercontent.com/ryadav2R/time-table/main/NEW_CORE1.csv'
 
 section_df = pd.read_csv(section_url)
-elective_df = pd.read_csv(elective_url)
 core_df = pd.read_csv(core_url)
 
 # Normalize the 'Roll No.' column to ensure there are no leading/trailing spaces and consistent data type
@@ -68,12 +67,7 @@ def generate_timetable(roll_number):
 
     # Extract the core section and elective sections
     core_section = student_section['Core Section'].values[0]
-    elective_1_section = student_section['Professional Elective 1'].values[0]
-    elective_2_section = student_section['Professional Elective 2'].values[0]
-
     # Retrieve the weekly timetable for Professional Electives 1 and 2
-    elective_1_timetable = elective_df[elective_df['Section(DE)'] == elective_1_section]
-    elective_2_timetable = elective_df[elective_df['Section(DE)'] == elective_2_section]
     core_timetable = core_df[core_df['Section'] == core_section]
 
     # Initialize the timetable matrix
@@ -97,8 +91,6 @@ def generate_timetable(roll_number):
 
     # Fill the timetable matrix for core and elective timetables
     fill_timetable(core_timetable)
-    fill_timetable(elective_1_timetable)
-    fill_timetable(elective_2_timetable)
 
     # Replace NaN values with blank spaces
     timetable_matrix = timetable_matrix.fillna('')
