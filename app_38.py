@@ -19,9 +19,8 @@ except ImportError:
     st.stop()
 
 # Load the section, professional elective, and core section files from GitHub
-section_url = 'https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/SECTION.csv'
-elective_url = 'https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/Professional_Elective%20-%20Sheet1.csv'
-core_url = 'https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/NEW_CORE.csv'
+section_url = 'https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/SECTION1.csv'
+core_url = 'https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/NEW_CORE1.csv'
 
 section_df = pd.read_csv(section_url)
 elective_df = pd.read_csv(elective_url)
@@ -52,10 +51,7 @@ def standardize_time_slot(time_slot):
         '10 TO 11': '10 TO 11',
         '11 TO 12': '11 TO 12',
         '12 TO 1': '12 TO 1',
-        '1 TO 2': '1 TO 2',
-        '2 TO 3': '2 TO 3',
-        '3 TO 4': '3 TO 4',
-        '4 TO 5': '4 TO 5'
+        '1 TO 2': '1 TO 2'
     }
     # Remove extra spaces in the time slot string to match the mapping
     standardized_slot = ' '.join(time_slot.upper().split())
