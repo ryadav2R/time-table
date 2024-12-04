@@ -19,8 +19,8 @@ except ImportError:
     st.stop()
 
 # Load the section, professional elective, and core section files from GitHub
-section_url = 'https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/SECTION1.csv'
-core_url = 'https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/NEW_CORE1.csv'
+section_url = 'https://raw.githubusercontent.com/ryadav2R/time-table/main/SECTION1.csv'
+core_url = 'https://raw.githubusercontent.com/ryadav2R/time-table/main/NEW_CORE1.csv'
 
 section_df = pd.read_csv(section_url)
 elective_df = pd.read_csv(elective_url)
@@ -161,7 +161,7 @@ st.markdown(
 )
 
 # Display image
-st.image('https://raw.githubusercontent.com/satyam26en/TIME_TABLE_KIIT/main/KIIT-Full-Logo-Center.png', use_column_width=True)
+st.image('https://raw.githubusercontent.com/ryadav2R/time-table/main/KIIT-Full-Logo-Center.png', use_column_width=True)
 
 st.title('Student Timetable Viewer')
 
